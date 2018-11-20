@@ -35,7 +35,14 @@ public class PlayerController : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             count = count + 1;
+            speed = speed - 5;
             SetCountText();
+        }
+
+        if (other.gameObject.CompareTag("Boost"))
+        {
+            speed = speed + 20;
+            other.gameObject.SetActive(false);
         }
     }
 
